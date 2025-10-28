@@ -20,6 +20,14 @@ from docx.shared import Pt
 # APP INIT + CORS
 # -----------------------------------------------------------------------------
 app = FastAPI(
+    @app.get("/")
+def root():
+    return {"ok": True, "service": "AI Detector PRO"}
+
+@app.get("/health")
+def health():
+    return {"ok": True}
+
     title="AI Detector PRO",
     version="3.2.0",
     openapi_url="/openapi.json",
