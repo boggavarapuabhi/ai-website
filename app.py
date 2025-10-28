@@ -294,3 +294,10 @@ async def report_docx(req: DocxIn):
         media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         headers={"Content-Disposition":f'attachment; filename="{req.filename}"'},
     )
+@app.get("/")
+def root():
+    return {"ok": True, "service": "AI Detector PRO"}
+
+@app.get("/health")
+def health():
+    return {"ok": True}
